@@ -21,6 +21,7 @@ typedef struct {
 }tRegProductos;
 
 /* Prototipos */
+void menu();
 void iniciarProceso();
 void grabarProducto();
 void finalizarProceso();
@@ -32,13 +33,42 @@ tRegProductos regProductos;
 FILE * archUsuarios;
 
 int main() {
-	iniciarProceso();
-	grabarProducto();
-	finalizarProceso();
+		menu();
 	
-	mostrarDatos();
+	
 	return 0;
 }
+
+
+
+void menu(){
+	int opcion;
+	printf("\t***Menu Inicial***\n");
+	printf("\n1 - Cargar Datos de Stock\n2 - Ver Stock\n3 - Ventas\n4 - Imprimir Ticket\n0 - Salir\n\n");
+	scanf("%d", &opcion);
+
+	switch(opcion){
+	case 1: iniciarProceso();
+			grabarProducto();
+			finalizarProceso();
+			menu();
+		break;
+	case 2: mostrarDatos();
+			menu();
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	}	
+
+}
+
+
+
+
+
+
 
 void iniciarProceso() {
 	archUsuarios = fopen("stock.dat", "wb");
@@ -88,12 +118,12 @@ void ingresarDatosProducto() {
 	scanf("%d", &regProductos.stockMinimo);
 	
 	printf("Precio unitario:$ ");	
-	scanf("%.2f", &regProductos.precioUnitario);
+	scanf("%f", &regProductos.precioUnitario);
 }
 
 void finalizarProceso() {
 	fclose(archUsuarios);
-	printf("Arhivo cerrado...\n");
+	printf("Arhivo cerrado...\n\n");
 }
 
 
@@ -102,8 +132,13 @@ void mostrarDatos() {
 	archUsuarios = fopen("stock.dat", "rb");
 	if(archUsuarios != NULL) {
 		fread(&regProductos, sizeof(tRegProductos), 1, archUsuarios);
+		printf("\t***Control de Stock***\n");
 		while(!feof(archUsuarios)) {
-			printf("%s\n", regProductos.descProducto);
+			printf("%s: %s\t||", regProductos.tipoProducto, regProductos.descProducto);
+			printf("Codigo de producto: %d||", regProductos.codProducto);
+			printf("Cantidad Actual: %d||", regProductos.stockActual);
+			printf("Cantidad Minima necesaria por mes: %d||", regProductos.stockMinimo);
+			printf("Precio unitario:$ %.2f||\n", regProductos.precioUnitario);
 			fread(&regProductos, sizeof(tRegProductos), 1, archUsuarios);
 		}
 	} else {
