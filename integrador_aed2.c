@@ -36,7 +36,7 @@ int main() {
 	grabarProducto();
 	finalizarProceso();
 	
-	//mostrarDatos();
+	mostrarDatos();
 	return 0;
 }
 
@@ -98,16 +98,20 @@ void finalizarProceso() {
 
 
 //modificando el main y la forma de apertura del archivo, se puede visualizar el contenido del archivo binario
-/*void mostrarDatos() {
-	iniciarProceso();
-	
-	fread(&regProductos, sizeof(tRegProductos), 1, archUsuarios);
-	while(!feof(archUsuarios)) {
-		printf("%s\n", regProductos.descProducto);
+void mostrarDatos() {
+	archUsuarios = fopen("stock.dat", "rb");
+	if(archUsuarios != NULL) {
 		fread(&regProductos, sizeof(tRegProductos), 1, archUsuarios);
+		while(!feof(archUsuarios)) {
+			printf("%s\n", regProductos.descProducto);
+			fread(&regProductos, sizeof(tRegProductos), 1, archUsuarios);
+		}
+	} else {
+		printf("Error al abrir el archivo!\n");
+		exit( EXIT_FAILURE );
 	}
 	
 	finalizarProceso();
-}*/
+}
 	
 	
