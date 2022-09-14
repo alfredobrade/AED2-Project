@@ -35,7 +35,7 @@ int main() {
 	iniciarProceso();
 	grabarProducto();
 	finalizarProceso();
-	
+	//Hola Oscarsito
 	//mostrarDatos();
 	return 0;
 }
