@@ -1,5 +1,11 @@
 /*
  trabajo integrador de AED2
+ Sistema de control de stock _ StockearX
+ El sistema constara de un modulo principal dedicado a la gestion de compras y ventas
+ con este modulo se agregaran y quitaran unidades del campo Stock
+ Además, tendrá un módulo accesorio dedicado al calculo del stock mínimo.
+ 
+ 
 */
 
 #include <stdio.h>
