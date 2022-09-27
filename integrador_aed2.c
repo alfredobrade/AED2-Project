@@ -52,7 +52,7 @@ void menu(){
 	printf("\t***Menu Inicial***\n");
 	printf("\n1 - Cargar Datos de Stock\n2 - Ver Stock\n3 - Ventas\n4 - Imprimir Ticket\n0 - Salir\n\n");
 	scanf("%d", &opcion);
-	//martina
+	
 	switch(opcion){
 	case 1: iniciarProceso();
 			grabarProducto();
