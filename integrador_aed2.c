@@ -3,7 +3,7 @@
  Sistema de control de stock _ StockearX
  El sistema constara de un modulo principal dedicado a la gestion de compras y ventas
  con este modulo se agregaran y quitaran unidades del campo Stock
- Adem·s, tendr· un mÛdulo accesorio dedicado al calculo del stock mÌnimo.
+ Adem√°s, tendr√° un m√≥dulo accesorio dedicado al calculo del stock m√≠nimo.
  
  
 */
@@ -52,7 +52,7 @@ void menu(){
 	printf("\t***Menu Inicial***\n");
 	printf("\n1 - Cargar Datos de Stock\n2 - Ver Stock\n3 - Ventas\n4 - Imprimir Ticket\n0 - Salir\n\n");
 	scanf("%d", &opcion);
-
+	//martina
 	switch(opcion){
 	case 1: iniciarProceso();
 			grabarProducto();
