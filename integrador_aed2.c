@@ -3,7 +3,7 @@
  Sistema de control de stock _ StockearX
  El sistema constara de un modulo principal dedicado a la gestion de compras y ventas
  con este modulo se agregaran y quitaran unidades del campo Stock
- Adem√°s, tendr√° un m√≥dulo accesorio dedicado al calculo del stock m√≠nimo.
+ Adem·s, tendr·° un mÛdulo accesorio dedicado al calculo del stock m√≠nimo.
  
  
 */
@@ -59,7 +59,8 @@ void menu(){
 			finalizarProceso();
 			menu();
 		break;
-	case 2: mostrarDatos();
+	case 2: 
+			mostrarDatos();
 			menu();
 		break;
 	case 3:
@@ -75,6 +76,7 @@ void menu(){
 
 
 
+// que gace esta?
 
 void iniciarProceso() {
 	archUsuarios = fopen("stock.dat", "wb");
