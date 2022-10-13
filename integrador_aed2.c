@@ -5,7 +5,7 @@
  con este modulo se agregaran y quitaran unidades del campo Stock
  Además, tendrá¡ un módulo accesorio dedicado al calculo del stock mÃ­nimo.
  
- 
+ aa
 */
 
 #include <stdio.h>
