@@ -7,6 +7,8 @@
 #include <String.h>
 #include <stdlib.h>
 
+#include "Articulo.h"
+
 //--declaracion de tipos de datos personalizados
 
 //--prototipos de funciones
@@ -20,12 +22,15 @@ void cerrarArchivoArticulos();
 
 //--declaracion de variables globales
 
+tArticulo rArticulo;
+FILE * Articulos;
+
 //--**funcion principal**--
 
 
 //--declaracion de funciones
 void abrirArticulosLectura(){
-	//vf_xxxxs = fopen("xxxxs.dat", "rb");
+	//Articulos = fopen("Articulos.dat", "rb");
 	
 }
 void leerRegistroArticulos(){
@@ -68,6 +73,8 @@ void imprimirListaArticulos(){
 	*/
 }
 
+//buscar por ID (pId){
+//Articulo.id == pId
 
 
 void cerrarArchivoArticulos(){

@@ -16,10 +16,12 @@ Entidad venta
 //--declaracion de tipos de datos personalizados
 typedef char String[255];
 
+// este es el tipo de Articulo que va en el array
 typedef struct {
 	String id_Articulo;
 	int cantidad;
 }ItemListaArticulos;
+
 typedef ItemListaArticulos ListaArticulos[20]; //esto debe ser una lista o vector
 
 typedef struct Venta{
@@ -39,7 +41,7 @@ void ingresarVenta();
 void guardarVenta();
 //tArticulo buscarArticulo(String);
 
-//String ingresarFecha(); //no me deja retornar un string
+void ingresarFecha(); //no me deja retornar un string - la prof me dijo que puedo hacer con puntero a char
 void cargarArticulos();
 void ingresarArticulo(int);
 void listarArticulos();
@@ -48,6 +50,8 @@ void listarArticulos();
 
 tVenta Venta;
 FILE * Ventas;
+
+String fecha;
 
 //--**funcion principal**--
 
@@ -87,9 +91,10 @@ void ingresarVenta(){
 	
 	
 }
-/*
-String ingresarFecha(){
-	String fecha, aux;
+
+void ingresarFecha(){ //hay una funcion cTime que podemos usar
+
+	String aux;
 	printf("ingrese día");
 	scanf("%s",&fecha);
 	printf("ingrese mes");
@@ -99,15 +104,15 @@ String ingresarFecha(){
 	scanf("%s",&aux);
 	strcat(fecha,aux);
 	
-	return fecha;
-}*/
+}
 
 void cargarArticulos(){
 	//primero imprimimos una lista para elegir que articulo agregar
-	listarArticulos();
+	imprimirListaArticulos();
 	int opcion = 1;
 	int i = 0;
 	while (opcion == 1){
+		//
 		ingresarArticulo(i);
 		
 	}
