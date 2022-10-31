@@ -10,11 +10,11 @@
 //#include "ArticuloPersistencia.h"
 
 //--declaracion de tipos de datos personalizados
-typedef char String[255];
+typedef char tString[255];
 
 typedef struct Articulo{
-	String id_articulo;
-	String descripcion;
+	tString id_articulo;
+	tString descripcion;
 	//int stock;
 	//int stockMin;
 	float costo;
@@ -23,12 +23,12 @@ typedef struct Articulo{
 
 //--prototipos de funciones
 
-void sumarStock(String, int);
-void restarStock(String, int);
-int consultarStock(String);
-int consultarStockMin(String);
+void sumarStock(tString, int);
+void restarStock(tString, int);
+int consultarStock(tString);
+int consultarStockMin(tString);
 void imprimirListaArticulos();
-void busquedaId (String);
+void busquedaId (tString);
 
 //persistencia
 void abrirArticulosLectura();
@@ -42,9 +42,9 @@ void cerrarArchivoArticulos();
 
 
 //--declaracion de variables globales
-
 tArticulo rArticulo;
 FILE * Articulos;
+
 
 //--**funcion principal**--
 
@@ -72,10 +72,10 @@ void cerrarArchivoArticulos(){
 
 //--declaracion de funciones
 void imprimirListaArticulos(){
-	String artBuscado; 
+	//tString artBuscado; 
 	
 	leerRegistroArticulos();
-	while ( ! feof(Articulos) ) {
+	while ( !feof(Articulos) ) {
 		
 		printf("\n %s	| %s	|  %2.f	\n", rArticulo.id_articulo, rArticulo.descripcion, rArticulo.precio);
 		
@@ -84,12 +84,12 @@ void imprimirListaArticulos(){
 	}
 	
 	printf("Ingrese ID del producto que desea");
-	scanf("%s", &artBuscado); 
+	//scanf("%s", &artBuscado); 
 	
-	busquedaId(artBuscado);
+	//busquedaId(artBuscado);
 }
 
-void busquedaId (String pIdBuscado){
+void busquedaId (tString pIdBuscado){
 	float acumCosto, acumPrecio;	//estas variables la declare local, pero deben ser globales
 	
 	leerRegistroArticulos();
