@@ -9,7 +9,7 @@
 
 //--declaracion de tipos de datos personalizados
 
-//--prototipos de funciones
+//--prototipos de funciones de persistencia
 void abrirVentasLectura();
 void leerRegistroVenta();
 void abrirVentasEscritura();
@@ -24,7 +24,7 @@ void cerrarArchivoVentas();
 //--**funcion principal**--
 
 
-//--declaracion de funciones
+//--declaracion de funciones de persistencia
 void abrirVentasLectura(){
 	//vf_xxxxs = fopen("Ventas.dat", "rb");
 	

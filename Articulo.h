@@ -10,11 +10,11 @@
 //#include "ArticuloPersistencia.h"
 
 //--declaracion de tipos de datos personalizados
-typedef char tString[255];
+typedef char String[255];
 
 typedef struct Articulo{
-	tString id_articulo;
-	tString descripcion;
+	String id_articulo;
+	String descripcion;
 	//int stock;
 	//int stockMin;
 	float costo;
@@ -23,17 +23,18 @@ typedef struct Articulo{
 
 //--prototipos de funciones
 
-void sumarStock(tString, int);
-void restarStock(tString, int);
-int consultarStock(tString);
-int consultarStockMin(tString);
+void sumarStock(String, int);
+void restarStock(String, int);
+int consultarStock(String);
+int consultarStockMin(String);
 void imprimirListaArticulos();
-void busquedaId (tString);
+void busquedaId (String);
 
 //persistencia
+void CrarArchivoArticulos();
 void abrirArticulosLectura();
 void leerRegistroArticulos();
-void abrirArticulosEscritura();
+void abrirArticulosAdd();
 void grabarRegistroArticulos();
 void recorrerArchivoArticulos();
 void imprimirListaArticulos();
@@ -50,6 +51,10 @@ FILE * Articulos;
 
 
 //--declaracion de funciones de persistencia
+void CrarArchivoArticulos(){
+	Articulos = fopen("Articulos.dat", "wb");
+}
+
 void abrirArticulosLectura(){
 	Articulos = fopen("Articulos.dat", "rb");
 	
@@ -57,8 +62,8 @@ void abrirArticulosLectura(){
 void leerRegistroArticulos(){
 	fread( &rArticulo, sizeof(tArticulo), 1, Articulos );
 }
-void abrirArticulosEscritura(){
-	Articulos = fopen("Articulos.dat", "wb");
+void abrirArticulosAdd(){
+	Articulos = fopen("Articulos.dat", "ab");
 }
 void grabarRegistroArticulos(){
 	fwrite( &rArticulo, sizeof( tArticulo ), 1, Articulos );
@@ -72,7 +77,7 @@ void cerrarArchivoArticulos(){
 
 //--declaracion de funciones
 void imprimirListaArticulos(){
-	//tString artBuscado; 
+	//String artBuscado; 
 	
 	leerRegistroArticulos();
 	while ( !feof(Articulos) ) {
@@ -89,7 +94,7 @@ void imprimirListaArticulos(){
 	//busquedaId(artBuscado);
 }
 
-void busquedaId (tString pIdBuscado){
+void busquedaId (String pIdBuscado){
 	float acumCosto, acumPrecio;	//estas variables la declare local, pero deben ser globales
 	
 	leerRegistroArticulos();

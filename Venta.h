@@ -7,9 +7,9 @@ Entidad venta
 #include <String.h>
 #include <stdlib.h>
 
-#include "VentaPersistencia.h"
+//#include "VentaPersistencia.h"
 #include "VentaArticuloPersistencia.h"
-#include "ArticuloPersistencia.h"
+//#include "ArticuloPersistencia.h"
 
 
 
@@ -43,8 +43,18 @@ void guardarVenta();
 
 void ingresarFecha(); //no me deja retornar un string - la prof me dijo que puedo hacer con puntero a char
 void cargarArticulos();
-void ingresarArticulo(int);
+void ElegirArticuloLista(int); //busca el articulo por su posicion en una lista
 void listarArticulos();
+
+
+//--prototipos de funciones de persistencia
+void abrirVentasLectura();
+void leerRegistroVenta();
+void abrirVentasEscritura();
+void grabarRegistroVenta();
+void recorrerArchivoVentas();
+void cerrarArchivoVentas();
+
 
 //--declaracion de variables globales
 
@@ -113,12 +123,16 @@ void cargarArticulos(){
 	int i = 0;
 	while (opcion == 1){
 		//
-		ingresarArticulo(i);
+		elegirArticuloLista(i);
+		
+		pritf("Elegir otro articulo?");
+		scanf("%d",&opcion);
 		
 	}
 }
 
-void ingresarArticulo(int i){
+//busca el articulo por su posicion en una lista
+void elegirArticuloLista(int i){
 	printf("ingrese un Articulo por su id\n");
 	scanf("%s",ListaArticulos.id_Articulo[i]);
 	
@@ -139,4 +153,37 @@ tArticulo buscarArticulo(String idArticulo){
 }
 */
 
+
+//--declaracion de funciones de persistencia
+void abrirVentasLectura(){
+	//vf_xxxxs = fopen("Ventas.dat", "rb");
+	
+	
+}
+void leerRegistroVentas(){
+	//fread( &vr_xxxx, sizeof(tr_xxxx), 1, vf_xxxxs );
+}
+void abrirVentasEscritura(){
+	//vf_xxxxs = fopen("xxxx.dat", "wb");
+}
+void grabarRegistroVentas(){
+	//fwrite( &vr_xxxx, sizeof( tr_xxxx ), 1, vf_xxxxs );
+}
+void recorrerArchivoVentas(){
+	//leerRegistro();
+	//while ( ! feof(vf_xxxxs) ) {
+		/*
+		if(condicion)  {
+			printf("\n%d", vr_xxxx.dni, ....);
+			contxxxxs ++;
+		}
+		*/
+		//leerRegistro();
+	//}
+}
+
+void cerrarArchivoVentas(){
+	//fclose( vf_xxxxs );
+	//printf("\n\nCantidad de xxxxs registrados: %d\n", contxxxxs);
+}
 
