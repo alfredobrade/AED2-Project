@@ -67,6 +67,7 @@ FILE * Articulos;
 
 //-*-* funcion principal *-*-
 int main() {
+	/*
 	abrirArticulosEscritura();
 	cargarArticulo();
 	cargarArticulo();
@@ -74,6 +75,7 @@ int main() {
 	cargarArticulo();
 	
 	cerrarArchivoArticulos();
+	*/
 	abrirArticulosLectura();
 	imprimirListaArticulos();
 	cerrarArchivoArticulos();
