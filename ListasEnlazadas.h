@@ -50,6 +50,7 @@ void inicializarLista( tLista ** pLista ) {}
 	*pLista = NULL;
 	printf("Lista inicializada\n");
 }
+//volver a hacer los metodos
 
 bool  listaVacia( tLista * pLista ) {}
 
