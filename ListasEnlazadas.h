@@ -50,7 +50,7 @@ void inicializarLista( tLista ** pLista ) {}
 	*pLista = NULL;
 	printf("Lista inicializada\n");
 }
-//volver a hacer los metodos
+//volver a hacer los metodos que se eliminaron al reducir el scope
 
 bool  listaVacia( tLista * pLista ) {}
 
