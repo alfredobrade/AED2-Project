@@ -17,7 +17,7 @@ typedef struct Articulo{
 	String descripcion;
 	//int stock;
 	//int stockMin;
-	float costo;
+	//float costo;
 	float precio;
 }tArticulo;
 
