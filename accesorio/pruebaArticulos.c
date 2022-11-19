@@ -7,34 +7,44 @@
 #include <String.h>
 #include <stdlib.h>
 
-//#include "ArticuloPersistencia.h"
+#include "Articulo.h"
 
 //--declaracion de tipos de datos personalizados
-typedef char String[255];
+
+
+//--declaracion de variables globales
+/*
+tArticulo rArticulo;
+FILE * Articulos;
+*/
+//--declaracion de prototipos de funciones
+void cargarArticulo();
+/*
+//--declaracion de tipos de datos personalizados
+typedef char tString[255];
 
 typedef struct Articulo{
-	String id_articulo;
-	String descripcion;
+	tString id_articulo;
+	tString descripcion;
 	//int stock;
 	//int stockMin;
-	//float costo;
+	float costo;
 	float precio;
 }tArticulo;
 
 //--prototipos de funciones
 
-void sumarStock(String, int);
-void restarStock(String, int);
-int consultarStock(String);
-int consultarStockMin(String);
+void sumarStock(tString, int);
+void restarStock(tString, int);
+int consultarStock(tString);
+int consultarStockMin(tString);
 void imprimirListaArticulos();
-void busquedaId (String);
+void busquedaId (tString);
 
 //persistencia
-void CrarArchivoArticulos();
 void abrirArticulosLectura();
 void leerRegistroArticulos();
-void abrirArticulosAdd();
+void abrirArticulosEscritura();
 void grabarRegistroArticulos();
 void recorrerArchivoArticulos();
 void imprimirListaArticulos();
@@ -47,14 +57,51 @@ tArticulo rArticulo;
 FILE * Articulos;
 
 
-//--**funcion principal**--
+*/
 
 
-//--declaracion de funciones de persistencia
-void CrarArchivoArticulos(){
-	Articulos = fopen("Articulos.dat", "wb");
+
+
+
+
+
+//-*-* funcion principal *-*-
+int main() {
+	/*
+	abrirArticulosAdd();
+	cargarArticulo();
+	cargarArticulo();
+	cargarArticulo();
+	cargarArticulo();
+	
+	cerrarArchivoArticulos();
+	*/
+	abrirArticulosLectura();
+	imprimirListaArticulos();
+	cerrarArchivoArticulos();
+	//leerRegistroArticulos();
+	//printf("art %s %s %.2f", rArticulo.id_articulo , rArticulo.descripcion , rArticulo.precio);
+
+	return 0;
 }
 
+
+//--implementacion de funciones
+void cargarArticulo(){
+	//abrirArticulosEscritura();
+	strcpy(rArticulo.id_articulo,"001");
+	strcpy(rArticulo.descripcion, "primero");
+	rArticulo.costo = 100;
+	rArticulo.precio = 150;
+	grabarRegistroArticulos();
+	
+	
+	
+}
+
+
+/*
+//--declaracion de funciones de persistencia
 void abrirArticulosLectura(){
 	Articulos = fopen("Articulos.dat", "rb");
 	
@@ -62,8 +109,8 @@ void abrirArticulosLectura(){
 void leerRegistroArticulos(){
 	fread( &rArticulo, sizeof(tArticulo), 1, Articulos );
 }
-void abrirArticulosAdd(){
-	Articulos = fopen("Articulos.dat", "ab");
+void abrirArticulosEscritura(){
+	Articulos = fopen("Articulos.dat", "wb");
 }
 void grabarRegistroArticulos(){
 	fwrite( &rArticulo, sizeof( tArticulo ), 1, Articulos );
@@ -77,7 +124,7 @@ void cerrarArchivoArticulos(){
 
 //--declaracion de funciones
 void imprimirListaArticulos(){
-	//String artBuscado; 
+	//tString artBuscado; 
 	
 	leerRegistroArticulos();
 	while ( !feof(Articulos) ) {
@@ -94,7 +141,7 @@ void imprimirListaArticulos(){
 	//busquedaId(artBuscado);
 }
 
-void busquedaId (String pIdBuscado){
+void busquedaId (tString pIdBuscado){
 	float acumCosto, acumPrecio;	//estas variables la declare local, pero deben ser globales
 	
 	leerRegistroArticulos();
@@ -110,3 +157,4 @@ void busquedaId (String pIdBuscado){
 
 	}
 }
+*/
