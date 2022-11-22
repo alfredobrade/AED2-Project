@@ -10,6 +10,7 @@ Grupo: B - Turno noche
 "Software de registro e informe de ventas para comercio (Ferretería)"
 
 Etapa 1.
+
 a. En esta etapa, una vez que decidimos sobre qué tema trataría el trabajo integrador, nos juntamos a debatir sobre las formas de solución del problema.
 En nuestro caso elegimos un sistema que registre las ventas de un local comercial (ferretería), que vaya generando un archivo donde quede registrado, incluya los datos, lo elimine en caso de que la compra sea cancelada y realice una lista de todo lo que se incluyó en ella. Obviamente, aplicando los temas dados durante todo el cuatrimestre y realizando las modificaciones necesarias para ir adaptándolo a medida que se avanzaba con la materia.
 
@@ -21,7 +22,9 @@ Tales como:
 *ingresarDatos();
 *grabarDatos();
 *finalizarRegistro();    //Esta función se ejecuta cuando el usuario indica que ya no desea continuar con el ingreso de datos pro teclado, produciendo así el cierre del archivo e imprimiendo un mensaje de despedida, finalizando así con la ejecución del programa.
+
 Etapa 2.
+
 a. Siguiendo con las indicaciones de la catedra, se realizaron los ajustes necesarios para incorporar mediante una lista estática los datos que se iban ingresados.
 b. Las funciones mediante las cuales se valió el programa para que el usuario pueda verificar los datos grabados son:
 *Función para recorrer la lista y mostrar los datos:
@@ -41,6 +44,7 @@ Void eliminarArticulo();
 if (elementoEliminar== pVentas[i])
 		pVentas[i] = “ “;
 	}
+	
 Etapa 3.
 a. Se procedió a la modificación del código con respecto a la función de ingreso de datos, que en nuestro caso la llamamos void insertarVenta ( ), para el almacenamiento de los valores ingresados por teclado en una lista enlazada.
 b. Así como se modifico la función anterior, también fue necesario cambiar las demás funciones con respecto a la impresión de los valores y la eliminación de alguno de ellos, debido a la diferencia entre la estructura utilizada anteriormente con la actual.
