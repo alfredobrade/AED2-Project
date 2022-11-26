@@ -75,4 +75,4 @@ Después del desarrollo de todos los temas de la materia y volcarlos de manera q
 El desarrollo de software es una tarea que la mayoría de las veces se desarrolla por equipos, las grandes empresas anhelan la inclusión de nuevos desarrolladores para que puedan trabajar junto a sus pares y es por eso que consideran el liderazgo, la comunicación y la facilidad para expresarse muy importantes para la finalización el proyecto encomendado.
 Pero, más allá de las trabas que significo la elaboración de este proyecto, es fascinante como la programación presenta infinidad de posibilidades para poder llevar a cabo diversos fines.
 Si bien, cada estructura, estrategia y demás tienen sus limitaciones, sus pros y contras, la fusión de todas ellas utilizando la lógica adquirida en el aula hace que se eliminen aquellas barreras que impiden que se pueda explotar el potencial de cada uno que está detrás del proyecto.
-Cosa que afianza aún mas, y dió más credibilidad al dicho que dice: “si lo puedes soñar. Lo puedes programar”.
+Cosa que afianza aún mas, y dió más credibilidad al dicho que dice: “si lo puedes soñar. Lo puedes programar”...
