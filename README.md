@@ -1,6 +1,6 @@
 # AED2-Project
 
-APLICACION EN CARPETA "STOCKEARX"
+APLICACION "STOCKEARX"
 
 Carrera: Lic. En Sistemas de Informacion
 Materia: Algoritmos y Estructuras de Datos II.
