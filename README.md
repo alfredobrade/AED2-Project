@@ -4,7 +4,7 @@ APLICACION "STOCKEARX"
 
 Carrera: Lic. En Sistemas de Informacion
 Materia: Algoritmos y Estructuras de Datos II.
-Profesor: Ana Company
+Profesor: Ana Company.
 Grupo: B - Turno noche
 
 "Software de registro e informe de ventas para comercio (Ferretería)"
